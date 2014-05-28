@@ -27,13 +27,14 @@
 
 namespace MwbExporter\Formatter\Propel1\Yaml;
 
-use MwbExporter\Formatter\Formatter as BaseFormatter;
+use MwbExporter\Formatter\Propel1\Formatter as BaseFormatter;
 use MwbExporter\Model\Base;
 
 class Formatter extends BaseFormatter
 {
     const CFG_PACKAGE                 = 'package';
     const CFG_GENERATE_SIMPLE_COLUMN  = 'generateSimpleColumn';
+    const CFG_VALIDATE_FK_PHP_NAME    = 'validateFkPhpName';
 
     protected function init()
     {
@@ -43,6 +44,7 @@ class Formatter extends BaseFormatter
             static::CFG_FILENAME                => '%schema%.schema.%extension%',
             static::CFG_PACKAGE                 => 'lib.model',
             static::CFG_GENERATE_SIMPLE_COLUMN  => false,
+            static::CFG_VALIDATE_FK_PHP_NAME    => true,
         ));
     }
 
